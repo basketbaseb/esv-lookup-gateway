@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "name": "esv-lookup-gateway",
+    "build": {
+      "env": {
+        "GO_BUILD_FLAGS": "-ldflags '-s -w'"
+      }
+    },
+    "env": {
+      "ESV_API_TOKEN": "@esv-api-token"
+    }
+}
