@@ -7,10 +7,10 @@ import (
     "github.com/basketbaseb/esv-lookup-gateway/utils"
 )
 
-func HtmlHandler(w http.ResponseWriter, r *http.Request) {
+func SearchHandler(w http.ResponseWriter, r *http.Request) {
     esvClient := utils.NewClient()
 
-    resp, err := esvClient.GetHTML(r)
+    resp, err := esvClient.GetSearch(r)
     if err != nil {
         log.Fatalln(err)
         return
