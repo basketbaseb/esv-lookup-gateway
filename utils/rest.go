@@ -72,6 +72,23 @@ func (c *Client) Do(req *http.Request) (*http.Response, error) {
     return resp, nil
 }
 
+func (c *Client) GetAudio(r *http.Request) (*http.Response, error) {
+    // Forward any query parameters
+    query := ParseQuery(r)
+
+    req, err := c.NewRequest("GET", "v3/passage/audio?" + query)
+    if err != nil {
+        return nil, err
+    }
+
+    resp, err := c.Do(req)
+    if err != nil {
+        return nil, err
+    }
+
+    return resp, nil
+}
+
 func (c *Client) GetHTML(r *http.Request) (*http.Response, error) {
     // Forward any query parameters
     query := ParseQuery(r)
